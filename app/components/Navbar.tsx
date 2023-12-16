@@ -26,7 +26,6 @@ const Navbar = () => {
                     <button 
                         className='btn'
                         onClick={() => {
-                            console.log('Light button clicked');
                             changeTheme('light');
                         }}
                     >
@@ -35,9 +34,7 @@ const Navbar = () => {
                     <button
                          className='btn btn-gray-900 text-white'
                          onClick={() => {
-                            console.log('Dark button clicked');
                             changeTheme('dark');
-                            console.log('Theme:', theme);
                         }}
                     >
                         Dark
