@@ -7,7 +7,7 @@ const executeQuery = async (query: string, data: any) => {
           host: "aws.connect.psdb.cloud",
           port: 3306,
           database: "example",
-          user: "8atx6v5psad6x3ws13y5",
+          user: "b1p9746wsggbwyd6ghja",
           password: "pscale_pw_hrJP2qW72r35KH8E31cP8HWtKudEPv3UwcJR76oTg49",
           waitForConnections: true,
           connectionLimit: 10,
