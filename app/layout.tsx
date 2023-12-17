@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from './context/ThemeContext'
 import ClientThemeWrapper from './context/ClientThemeWrapper'
+import { EdgeStoreProvider } from './lib/edgestore';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,11 +20,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body  className={inter.className}>
+      <EdgeStoreProvider>
         <ThemeProvider>
           <ClientThemeWrapper>
-            {children}
+              {children}
           </ClientThemeWrapper>
         </ThemeProvider>
+      </EdgeStoreProvider>
       </body>
     </html>
   )

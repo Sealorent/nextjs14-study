@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Navbar from '@/app/components/Navbar';
+import UploadFile from './components/UploadFile';
 
 export default function Home() {
   return (
@@ -11,6 +12,8 @@ export default function Home() {
         // make section on center
         className='flex justify-center items-center min-h-screen'
       >
+        <div className='flex flex-col gap-2'>
+        <UploadFile/>
         <div className="stats shadow">
           <div className="stat">
             <div className="stat-figure text-primary">
@@ -42,6 +45,7 @@ export default function Home() {
             <div className="stat-title">Tasks done</div>
             <div className="stat-desc text-secondary">31 tasks remaining</div>
           </div>
+        </div>
         </div>
       </section>
       

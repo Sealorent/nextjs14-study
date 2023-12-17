@@ -1,4 +1,4 @@
-import executeQuery from "@/app/db";
+import executeQuery from "@/app/lib/db";
 
 export async function GET() {
     try {
