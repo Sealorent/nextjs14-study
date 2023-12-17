@@ -39,9 +39,6 @@ const Navbar = () => {
                     >
                         Dark
                     </button>
-                    <button>
-                        Retro
-                    </button>
                 </div>
 
             </ul>
