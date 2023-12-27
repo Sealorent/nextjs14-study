@@ -4,6 +4,7 @@ import './globals.css'
 import { ThemeProvider } from './context/ThemeContext'
 import ClientThemeWrapper from './context/ClientThemeWrapper'
 import { EdgeStoreProvider } from './lib/edgestore';
+import { SessionProvider } from 'next-auth/react'
 
 const inter = Inter({ subsets: ['latin'] })
 
