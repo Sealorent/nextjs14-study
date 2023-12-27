@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Input from '@/app/components/CompleteInput';
 import { HeadProvider, Title} from 'react-head';
 
-const SignIn = () => {
+const Register = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [loading, setLoading] = useState(false);
@@ -72,4 +72,4 @@ const SignIn = () => {
     );
 };
 
-export default SignIn;
+export default Register;
