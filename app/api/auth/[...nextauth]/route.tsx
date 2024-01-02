@@ -8,7 +8,7 @@ const authOptions: NextAuthOptions = {
     session: {
         strategy: "jwt",
     },
-    secret : process.env.AUTH_SECRET,
+    secret : 'hallo',
     providers: [
         CredentialsProvider({
             name: "Credentials",
@@ -46,6 +46,7 @@ const authOptions: NextAuthOptions = {
     callbacks : {
         async jwt({token, account, profile, user} : any){
             if(account?.provider === "credentials"){
+                console.log("JWT", [token, account, profile, user]);
                 token.email = user.email;
                 token.fullname = user.fullname;
                 token.phone = user.phone;
@@ -68,13 +69,15 @@ const authOptions: NextAuthOptions = {
             if("role" in token){
                 session.user.role = token.role;
             }
-
+            console.log("SESSION", [session, token]);
             return session;
         },
     },
     pages : {
-        signIn : '/auth/login'
+        signIn : '/sign-in',
     }
 }
 
-export default NextAuth(authOptions);
+const handler = NextAuth(authOptions);
+
+export { handler as GET , handler as POST};

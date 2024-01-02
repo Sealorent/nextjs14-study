@@ -16,6 +16,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
     try {
         // Wait for the promise to resolve before accessing properties
         const body = await req.json();
+        
 
         // Wrap the signUp function in a promise
         const status = await new Promise<boolean>((resolve, reject) => {

@@ -49,15 +49,18 @@ const InputText: React.FC<InputTextProps> = ({
     };
 
     const handlePassword = ( input : string ) => {
-        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+        // make regex password 8 minimal character ,  1 uppercase, 1 lowercase, 1 number, 1 special character ( !@#$%^&*()_+-= ) ex : Viky2311@
+        // const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+-=])[A-Za-z\d!@#$%^&*()_+-=]{8,}$/;
 
-        if ( !passwordRegex.test(input) ) {
-            setError('Password must contain at least 8 characters, one uppercase, one lowercase and one number');
-        } else {
-            setError('');
-        }
+
+        // if ( !passwordRegex.test(input) ) {
+        //     setError('Password must contain at least 8 characters, one uppercase, one lowercase and one number');
+        // } else {
+        //     setError('');
+        // }
 
     }
+
     const handleEmail = ( input : string ) => {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -82,6 +85,7 @@ const InputText: React.FC<InputTextProps> = ({
                     value={value} 
                     onChange={handleInputChange} 
                     placeholder={placeholder}
+                    autoComplete={type === 'password' ? 'current-password' : 'username'} 
                     className={'input input-bordered w-full ' + className } 
                 />
 
